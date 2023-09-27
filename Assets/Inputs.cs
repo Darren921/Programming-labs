@@ -14,9 +14,13 @@ public static class Inputs
 
             Player1.SetMoveDirection(ctx.ReadValue<Vector3>());
         };
-        
+        _Control.Game.Crouched.canceled += _ =>
+        {
+            Debug.Log("Crouched");
+        };
+
     }
-  
+
     public static void GameMode()
     {
         _Control.Game.Enable();

@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Crouched",
                     "type": "Button",
                     "id": "6dfe0fdb-35c0-4163-ae77-047aa7e3954f",
                     "expectedControlType": "Button",
@@ -104,47 +104,25 @@
                 },
                 {
                     "name": "",
-                    "id": "277c5817-f7ee-48bb-a2ad-b7ad8ef66dae",
-                    "path": "<Mouse>/leftButton",
+                    "id": "dda71646-0d65-4fe3-acee-7011e4fd31a7",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Crouched",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "171341cd-6352-4e40-84ab-18342d8a3029",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "1b32bc5b-3c2d-498c-b5f0-7fe502bfe27d",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
-                    "isComposite": true,
+                    "action": "Crouched",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "a57b09ad-7559-4650-8947-0e3fa79be729",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "54d9e535-bc81-465d-8794-9583b3654dc9",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },

@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Vector3 _moveDir;
-    //private Button _ShootButton;
+    private Button _CrouchButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +25,9 @@ public class Player : MonoBehaviour
      _moveDir = NewDirection;
     }
 
-   /* public void detectShot(Button button)
+   public void detectCrouched (Button crouched )
     {
-        _ShootButton = gameObject.AddComponent<Button>();
+        _CrouchButton = gameObject.AddComponent<Button>();
     }
-   */
+   
 }
