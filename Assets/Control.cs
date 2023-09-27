@@ -25,21 +25,30 @@ public partial class @Control: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""Game"",
-            ""id"": ""e0dccbb3-670d-4d3a-974a-fae8c8233237"",
+            ""id"": ""25a90ef1-50dd-458d-b759-d9ba7fb52f4d"",
             ""actions"": [
                 {
                     ""name"": ""Movement"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""11292a13-1829-44e5-b90e-92c45f3e3496"",
+                    ""id"": ""74ab0cc0-85e2-40a8-a387-3c02c4c700c0"",
                     ""expectedControlType"": ""Vector3"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Shoot"",
+                    ""name"": ""Shooting"",
                     ""type"": ""Button"",
-                    ""id"": ""6dfe0fdb-35c0-4163-ae77-047aa7e3954f"",
+                    ""id"": ""f89f39e6-fb63-4641-ac2c-9106f71b7fd7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Crouched"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6c40512-186b-4ac7-8966-010175c70b7c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,8 +57,8 @@ public partial class @Control: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""26a0fab9-07fa-4b8f-a9c7-ccabd54c9075"",
+                    ""name"": ""3D Vector"",
+                    ""id"": ""5e327e29-3c76-4ee9-8731-a7715b049556"",
                     ""path"": ""3DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -59,8 +68,8 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Up"",
-                    ""id"": ""e9d33cc9-39b6-4323-8d66-9ba43b53b46a"",
+                    ""name"": ""up"",
+                    ""id"": ""044ab1c8-8ba5-45e8-b109-ef1881b5c082"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -70,8 +79,8 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Down"",
-                    ""id"": ""7a73cd7d-9554-4b35-bb9b-204c9d0706c8"",
+                    ""name"": ""down"",
+                    ""id"": ""2184c267-82cc-4ef1-af0b-f62df68f2770"",
                     ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -81,8 +90,8 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Left"",
-                    ""id"": ""2352ae18-cff5-4289-bc80-91fe7741a047"",
+                    ""name"": ""left"",
+                    ""id"": ""9236fe06-c6b6-4f93-b7e2-9befa037b9b4"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -92,8 +101,8 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Right"",
-                    ""id"": ""5c7abf2a-1164-4da4-bbc6-86bf1443833d"",
+                    ""name"": ""right"",
+                    ""id"": ""308fa0ee-b03b-4f23-b852-b7f910c8b28f"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -103,8 +112,8 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Forward"",
-                    ""id"": ""9afdf05f-0159-461f-8ade-aa0d5097f43e"",
+                    ""name"": ""forward"",
+                    ""id"": ""08f47323-4e9e-4190-ba8e-67107b8f2351"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -114,8 +123,8 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Backward"",
-                    ""id"": ""e5218eb7-7ebc-4fda-81fb-6a0246217059"",
+                    ""name"": ""backward"",
+                    ""id"": ""281835c2-dbbe-4c55-a641-8f40aa6ba3cb"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -126,58 +135,47 @@ public partial class @Control: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""277c5817-f7ee-48bb-a2ad-b7ad8ef66dae"",
+                    ""id"": ""c9728181-d797-46a1-8617-c5c2311d4835"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
+                    ""action"": ""Shooting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""171341cd-6352-4e40-84ab-18342d8a3029"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""e9ac9510-792a-4378-bee7-f9e0f5aea4b4"",
+                    ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": true,
+                    ""action"": ""Crouched"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""a57b09ad-7559-4650-8947-0e3fa79be729"",
-                    ""path"": """",
+                    ""name"": """",
+                    ""id"": ""f9a5ecac-1326-4124-b605-37e6bba1e7c2"",
+                    ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
+                    ""action"": ""Crouched"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""54d9e535-bc81-465d-8794-9583b3654dc9"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         },
         {
             ""name"": ""UI"",
-            ""id"": ""caa57d56-175c-48b6-97ef-e419732e93f8"",
+            ""id"": ""9e9d692b-8781-455a-9dbb-a2d0ccba051d"",
             ""actions"": [
                 {
                     ""name"": ""New action"",
                     ""type"": ""Button"",
-                    ""id"": ""24ced791-431c-4669-9b20-fa7e2b21df3b"",
+                    ""id"": ""2561c34d-6299-4dd0-b20a-af5bb37db817"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -187,35 +185,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""8b4bd606-f1e8-4116-844b-c6b739c28322"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Permanent"",
-            ""id"": ""b818c8a0-5d67-4315-a763-b8aa77b58477"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""e56c11f9-b6f6-4369-9955-20210bc38039"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""0690ab94-2276-432c-90d1-3afd780c5ce5"",
+                    ""id"": ""9c0cbcad-e6ec-4882-9c70-95456f736772"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
@@ -232,13 +202,11 @@ public partial class @Control: IInputActionCollection2, IDisposable
         // Game
         m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
         m_Game_Movement = m_Game.FindAction("Movement", throwIfNotFound: true);
-        m_Game_Shoot = m_Game.FindAction("Shoot", throwIfNotFound: true);
+        m_Game_Shooting = m_Game.FindAction("Shooting", throwIfNotFound: true);
+        m_Game_Crouched = m_Game.FindAction("Crouched", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
-        // Permanent
-        m_Permanent = asset.FindActionMap("Permanent", throwIfNotFound: true);
-        m_Permanent_Newaction = m_Permanent.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,13 +269,15 @@ public partial class @Control: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Game;
     private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
     private readonly InputAction m_Game_Movement;
-    private readonly InputAction m_Game_Shoot;
+    private readonly InputAction m_Game_Shooting;
+    private readonly InputAction m_Game_Crouched;
     public struct GameActions
     {
         private @Control m_Wrapper;
         public GameActions(@Control wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Game_Movement;
-        public InputAction @Shoot => m_Wrapper.m_Game_Shoot;
+        public InputAction @Shooting => m_Wrapper.m_Game_Shooting;
+        public InputAction @Crouched => m_Wrapper.m_Game_Crouched;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -320,9 +290,12 @@ public partial class @Control: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @Shoot.started += instance.OnShoot;
-            @Shoot.performed += instance.OnShoot;
-            @Shoot.canceled += instance.OnShoot;
+            @Shooting.started += instance.OnShooting;
+            @Shooting.performed += instance.OnShooting;
+            @Shooting.canceled += instance.OnShooting;
+            @Crouched.started += instance.OnCrouched;
+            @Crouched.performed += instance.OnCrouched;
+            @Crouched.canceled += instance.OnCrouched;
         }
 
         private void UnregisterCallbacks(IGameActions instance)
@@ -330,9 +303,12 @@ public partial class @Control: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @Shoot.started -= instance.OnShoot;
-            @Shoot.performed -= instance.OnShoot;
-            @Shoot.canceled -= instance.OnShoot;
+            @Shooting.started -= instance.OnShooting;
+            @Shooting.performed -= instance.OnShooting;
+            @Shooting.canceled -= instance.OnShooting;
+            @Crouched.started -= instance.OnCrouched;
+            @Crouched.performed -= instance.OnCrouched;
+            @Crouched.canceled -= instance.OnCrouched;
         }
 
         public void RemoveCallbacks(IGameActions instance)
@@ -396,62 +372,13 @@ public partial class @Control: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
-
-    // Permanent
-    private readonly InputActionMap m_Permanent;
-    private List<IPermanentActions> m_PermanentActionsCallbackInterfaces = new List<IPermanentActions>();
-    private readonly InputAction m_Permanent_Newaction;
-    public struct PermanentActions
-    {
-        private @Control m_Wrapper;
-        public PermanentActions(@Control wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Permanent_Newaction;
-        public InputActionMap Get() { return m_Wrapper.m_Permanent; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PermanentActions set) { return set.Get(); }
-        public void AddCallbacks(IPermanentActions instance)
-        {
-            if (instance == null || m_Wrapper.m_PermanentActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PermanentActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
-        }
-
-        private void UnregisterCallbacks(IPermanentActions instance)
-        {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
-        }
-
-        public void RemoveCallbacks(IPermanentActions instance)
-        {
-            if (m_Wrapper.m_PermanentActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IPermanentActions instance)
-        {
-            foreach (var item in m_Wrapper.m_PermanentActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_PermanentActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public PermanentActions @Permanent => new PermanentActions(this);
     public interface IGameActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnShoot(InputAction.CallbackContext context);
+        void OnShooting(InputAction.CallbackContext context);
+        void OnCrouched(InputAction.CallbackContext context);
     }
     public interface IUIActions
-    {
-        void OnNewaction(InputAction.CallbackContext context);
-    }
-    public interface IPermanentActions
     {
         void OnNewaction(InputAction.CallbackContext context);
     }

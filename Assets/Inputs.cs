@@ -11,12 +11,21 @@ public static class Inputs
         _Control = new Control();
         _Control.Game.Movement.performed += ctx => 
         {
-
-            Player1.SetMoveDirection(ctx.ReadValue<Vector3>());
+             Player1.SetMoveDirection(ctx.ReadValue<Vector3>());
         };
-        
+
+        _Control.Game.Crouched.performed += ctx =>
+        {
+            Debug.Log("Crouched");
+        };
+
+        _Control.Game.Shooting.performed += ctx =>
+        {
+            Debug.Log("Shot");
+        };
+
     }
-  
+
     public static void GameMode()
     {
         _Control.Game.Enable();
