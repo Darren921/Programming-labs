@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Crouching",
+                    "type": "Button",
+                    "id": "5679ec1e-8cdb-4758-8143-44b60b0a2464",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -114,37 +123,26 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "171341cd-6352-4e40-84ab-18342d8a3029",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "20d6a632-9e31-4936-8d60-c341cfaccc3c",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
-                    "isComposite": true,
+                    "action": "Crouching",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "a57b09ad-7559-4650-8947-0e3fa79be729",
-                    "path": "",
+                    "name": "",
+                    "id": "945bb57b-1c48-4310-95aa-c72736106c7b",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Crouching",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "54d9e535-bc81-465d-8794-9583b3654dc9",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         },

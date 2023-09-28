@@ -44,6 +44,15 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Crouching"",
+                    ""type"": ""Button"",
+                    ""id"": ""5679ec1e-8cdb-4758-8143-44b60b0a2464"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -136,37 +145,26 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""171341cd-6352-4e40-84ab-18342d8a3029"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""20d6a632-9e31-4936-8d60-c341cfaccc3c"",
+                    ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": true,
+                    ""action"": ""Crouching"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""a57b09ad-7559-4650-8947-0e3fa79be729"",
-                    ""path"": """",
+                    ""name"": """",
+                    ""id"": ""945bb57b-1c48-4310-95aa-c72736106c7b"",
+                    ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
+                    ""action"": ""Crouching"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""54d9e535-bc81-465d-8794-9583b3654dc9"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -233,6 +231,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
         m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
         m_Game_Movement = m_Game.FindAction("Movement", throwIfNotFound: true);
         m_Game_Shoot = m_Game.FindAction("Shoot", throwIfNotFound: true);
+        m_Game_Crouching = m_Game.FindAction("Crouching", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -302,12 +301,14 @@ public partial class @Control: IInputActionCollection2, IDisposable
     private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
     private readonly InputAction m_Game_Movement;
     private readonly InputAction m_Game_Shoot;
+    private readonly InputAction m_Game_Crouching;
     public struct GameActions
     {
         private @Control m_Wrapper;
         public GameActions(@Control wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Game_Movement;
         public InputAction @Shoot => m_Wrapper.m_Game_Shoot;
+        public InputAction @Crouching => m_Wrapper.m_Game_Crouching;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -323,6 +324,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @Crouching.started += instance.OnCrouching;
+            @Crouching.performed += instance.OnCrouching;
+            @Crouching.canceled += instance.OnCrouching;
         }
 
         private void UnregisterCallbacks(IGameActions instance)
@@ -333,6 +337,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @Crouching.started -= instance.OnCrouching;
+            @Crouching.performed -= instance.OnCrouching;
+            @Crouching.canceled -= instance.OnCrouching;
         }
 
         public void RemoveCallbacks(IGameActions instance)
@@ -446,6 +453,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnCrouching(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

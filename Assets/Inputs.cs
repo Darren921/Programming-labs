@@ -15,6 +15,15 @@ public static class Inputs
             Player1.SetMoveDirection(ctx.ReadValue<Vector3>());
         };
         
+        _Control.Game.Crouching.performed += ctx =>
+        {
+            Debug.Log("Crouched");
+        };
+
+        _Control.Game.Shoot.performed += ctx =>
+        {
+            Debug.Log("Shot");
+        };
     }
   
     public static void GameMode()
