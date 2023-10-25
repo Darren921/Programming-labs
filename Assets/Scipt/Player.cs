@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private Boolean HasAmmo;
     private int ammoLeft;
     [SerializeField] public int AmmoRefillMax;
-
+    [SerializeField] GameObject _AmmoBox;
 
 
 
@@ -96,14 +96,11 @@ public class Player : MonoBehaviour
             return  true;
         }
         else
-        {
+        {       
             return  false;
         }
     }
    
-
-
-
     public void Shoot()
     {
         if (ammoLeft > 0 )
@@ -144,6 +141,7 @@ public class Player : MonoBehaviour
         {
             maxAmmo = AmmoRefillMax;
             Ammo.text = "Ammo: " + ammoLeft.ToString() + " / " + maxAmmo.ToString();
+            Destroy(GameObject.FindWithTag("AmmoBox"));
         }
     }
 

@@ -6,32 +6,29 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Ammobox : MonoBehaviour
 {
-    public static Player _player;
+    private Player _player;
 
-    public void Update()
+    private void Start()
     {
-        _player = new Player();
-
-       _player.GetAmmo();
-        
 
     }
-
-
-    private void OnCollisionEnter(Collision collision)
+    public void Update()
     {
-      
 
-            //if the player hits a gameobject "BG" it stops all player input to the piece and
-            // stops it from going further in the y direction 
-            if (collision.gameObject.name == "g17" && _player.GetAmmo() == true)
+    }
+}
+
+   /* public void OnCollisionEnter(Collision collision)
+    {
+     
+            if (collision.gameObject.name == "g17" )
             {
                 Destroy(gameObject);
             }
         }
-
         }
-
+        
+   */
 
     
 
